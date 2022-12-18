@@ -1,7 +1,7 @@
 # kali-automation-install
 
 ## Prérequis
-Pour que le script soit utilisable, il faut au préalable installer [packer](https://www.packer.io/) ainsi [VMware](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html) ou [VirtualBox](https://www.virtualbox.org/) en fonction de votre hyperviseur cible.
+Pour que le script soit utilisable, il faut au préalable installer [packer](https://www.packer.io/) ainsi que [VMware](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html) ou [VirtualBox](https://www.virtualbox.org/) en fonction de votre hyperviseur cible.
 
 Sur Linux, il suffit de taper la commande suivante
 ```
