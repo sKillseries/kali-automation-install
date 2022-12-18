@@ -18,6 +18,8 @@ apt install packer virtualbox virtuabox-ext-pack
 Cependant, si vous souhaiter utilisé VMware, il faudra l'installer manuellement.
 Exemple d'installation de VMware Player: https://lecrabeinfo.net/installer-vmware-workstation-player-sur-ubuntu-linux.html
 
+**NOTE**: Concernant VMware, Packer fonctionne avec VMware Fusion (Mac OS), VMware Workstation (Linux et Windows), et VMware Player (uniquement Linux).
+
 ## Configuration
 
 Une fois que l'hyperviseur de votre choix est installé, veuillez compléter les variables qui sont dans le fichier `kali-var.json`:

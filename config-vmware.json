@@ -33,6 +33,14 @@
         "keymap=fr ",
         "hostname=kali ",
         "domain='' ",
+        "<enter>",
+        "<wait1m30s>",
+        "<enter>",
+        "<wait25m>",
+        "<enter>",
+        "<wait10s>",
+        "<enter>",
+        "<wait30s>",
         "<enter>"
       ]
     }
