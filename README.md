@@ -57,6 +57,11 @@ Dans certains cas, en fonction de la qualité et rapidité de votre réseaux ou 
 
 ## Lancer la VM
 
+Avant de pouvoir lancer la VM, il faudra initialisé Vagrant avec la commande `vagrant init'.
+Puis faire la commande `cp Vagrantfile.tpl Vagrantfile`et modifier le fichier Vagrantfile en ajoutant la ligne `config.vm.box = "<Nom_de_la_box>.box"`, juste avant la ligne `config.vm.provider "virtualbox" do |vb|`.
+
+Et maintenant vous pouvez lancer la commande:
+
 ```
 vagrant up
 ```
