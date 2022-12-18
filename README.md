@@ -13,7 +13,7 @@ Pour que le script soit utilisable, il faut au préalable installer [packer](htt
 
 Sur Linux, il suffit de taper la commande suivante
 ```
-apt install packer virtualbox virtuabox-ext-pack
+apt install packer vagrant virtualbox virtuabox-ext-pack
 ```
 Cependant, si vous souhaiter utilisé VMware, il faudra l'installer manuellement.
 Exemple d'installation de VMware Player: https://lecrabeinfo.net/installer-vmware-workstation-player-sur-ubuntu-linux.html
@@ -49,3 +49,21 @@ Pour lancer le build en mode headless (sans aucune fenêtre), vous devrez vous a
 "headless": "1",
 ```
 Dans la section `"builders"` avant `"boot_command"`
+
+**INFOS**: Pour des raisons d'automatisation aucune interaction humaine n'est requise. A certaines étapes le timer avant que le script ne poursuivent les actions nécessaires peuvent prendre un certain temps, c'est normal. Par conséquent, si vous n'êtes pas en mode headless, veuillez faire aucune action manuel.
+Dans certains cas, en fonction de la qualité et rapidité de votre réseaux ou de votre ordinateur, il faudra modifié les timers symbolisé par la variable `"<waitXX>"` situé dans la section `"builders"` dans `"boot_command"` situé dans le fichier `config-<hyperviseur>.json`.
+
+**Attention**: Lors de la phase de lancement des scripts bash, les lignes deviendront rouge, ne vous inquiéter pas, il y a aucune erreur, c'est la coloration utilisé par packer lors de cette étape.
+
+## Lancer la VM
+
+```
+vagrant up
+```
+
+Identifiant: vagrant
+Password: vagrant
+
+**Note**: Quand on exécute un `vagrant up`, Vagrant va copier la box dans un cache et elle ne sera pas détruite automatiquement.
+Pour pallier à ce problème vous pourrez supprimer le dossier `output-<hypeviseur>-iso` et taper la commande `vagrant box remove <nom_de_la_box>`.
+Il se peut que vous rencontriez le même problème avec VirtualBox si une VM porte le même nom, pour régler cela taper la commande `VBoxManage unregistervm <nom_de_la_vm> --delete`.
