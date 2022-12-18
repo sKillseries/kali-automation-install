@@ -67,6 +67,7 @@ vagrant up
 ```
 
 Identifiant: vagrant
+
 Password: vagrant
 
 **Note**: Quand on exécute un `vagrant up`, Vagrant va copier la box dans un cache et elle ne sera pas détruite automatiquement.
