@@ -1,0 +1,56 @@
+{
+  "variables": {
+    "iso_url": "",
+    "iso_checksum": ""
+  },
+  "builders": [
+    {
+      "type": "virtualbox-iso",
+      "guest_os_type": "Debian_64",
+      "iso_url": "{{user `iso_url`}}",
+      "iso_checksum": "sha256:{{user `iso_checksum`}}",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_timeout": "60m",
+      "cpus": "2",
+      "memory": "2048",
+      "shutdown_command": "echo 'packer' | sudo -S shutdown -P now",
+      "http_directory": "http",
+      "virtualbox_version_file": "",
+      "guest_additions_mode": "disable",
+      "boot_command": [
+        "<esc><wait>",
+        "install <wait>",
+        "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+        "locale=fr_FR ",
+        "keymap=fr ",
+        "hostname=kali ",
+        "domain='' ",
+        "<enter>"
+      ],
+      "vboxmanage": [
+        ["modifyvm", "{{.Name}}", "--clipboard-mode", "bidirectional"],
+        ["modifyvm", "{{.Name}}", "--draganddrop", "bidirectional"]
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S bash -euxo pipefail '{{.Path}}'",
+      "scripts": [
+        "scripts/vagrant.sh",
+        "scripts/minimize.sh",
+        "scripts/pentest-tools-install.sh"
+      ]
+    }
+  ],
+  "post-processors": [
+    [
+      {
+        "type": "vagrant",
+        "vagrantfile_template": "Vagrantfile.tpl"
+      }
+    ]
+  ]
+}
