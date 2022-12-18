@@ -1,31 +1,41 @@
-# kali-vagrant
+# kali-automation-install
 
-## Setup
-First, install [packer](https://www.packer.io/), [VMware](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html), [VirtualBox](https://www.virtualbox.org/), and [qemu](https://www.qemu.org/download/).
+## Prérequis
+Pour que le script soit utilisable, il faut au préalable installer [packer](https://www.packer.io/) ainsi [VMware](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html) ou [VirtualBox](https://www.virtualbox.org/) en fonction de votre hyperviseur cible.
 
-On Kali Linux, this can be accomplished by running
+Sur Linux, il suffit de taper la commande suivante
 ```
-apt install packer virtualbox virtuabox-ext-pack qemu
+apt install packer virtualbox virtuabox-ext-pack
+```
+Cependant, si vous souhaiter utilisé VMware, il faudra l'installer manuellement.
+Exemple d'installation de VMware Player: https://lecrabeinfo.net/installer-vmware-workstation-player-sur-ubuntu-linux.html
+
+## configuration
+
+Une fois que l'hyperviseur de votre choix est installé, veuillez compléter les variables qui sont dans le fichier `kali-var.json`:
+```
+{
+    "iso_url": "<Lien de Téléchargement Kali-Linux>",
+    "iso_checksum": "<SHA256Checksum de l'ISO>
+}
 ```
 
-However, VMware will still need to be manually installed.
+## Lancement du build
 
-Then `cp kali-vars.json.template kali-vars.json` and fill in the values for `kali-var.json`.
-
-**NOTE**: If on Windows, changing the line `"accelerator": "kvm",` in `config.json` to use an accelerator on our system is mandatory. We can check what accelerators we have with `qemu-system-x86_64 -accel ?`. Likely we will change the line to be `"accelerator": "tcg",`.
-
-## Running the build
-
+Pour VirtualBox:
 ```
-packer build -var-file=kali-vars.json config.json
+packer build -var-file=kali-vars.json config-virtualbox.json
 ```
 
-This will upload to the Vagrant cloud.
-To avoid doing that and keeping the build local, remove the `vagrant-cloud` post-processor from the config file.
+Pour VMware:
+```
+packer build -var-file=kali-vars.json config-vmware.json
+```
 
-## Running the build (headless)
-To run headless builds, you will need to ensure you have the Extension Pack installed and then edit the config.json file to add
+## Lancement du build (headless)
+
+Pour lancer le build en mode headless (sans aucune fenêtre), vous devrez vous assurer que le pack d'extension est installé (dans le cas de VirtualBox), puis modifier le fichier `config-<hyperviseur>` pour ajouter:
 ```
 "headless": "1",
 ```
-In the `"builders"` section before `"boot_command"`
+Dans la section `"builders"` avant `"boot_command"`
