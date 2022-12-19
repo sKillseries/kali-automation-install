@@ -55,6 +55,10 @@ Dans certains cas, en fonction de la qualité et rapidité de votre réseaux ou 
 
 **Attention**: Lors de la phase de lancement des scripts bash, les lignes deviendront rouge, ne vous inquiéter pas, il y a aucune erreur, c'est la coloration utilisé par packer lors de cette étape.
 
+Dans le dossier scripts, il y a le fichier `pentest-tools-install.sh`, si vous possédez déjà un script d'installation d'outils bash vous pouvez copier-coller le contenu dans le fichier.
+
+Ce script est en cours de dev et viendra dans la prochaine release.
+
 ## Lancer la VM
 
 Avant de pouvoir lancer la VM, il faudra initialisé Vagrant avec la commande `vagrant init`.
