@@ -61,19 +61,15 @@ Ce script est en cours de dev et viendra dans la prochaine release.
 
 ## Lancer la VM
 
-Avant de pouvoir lancer la VM, il faudra initialisé Vagrant avec la commande `vagrant init`.
-Puis faire la commande `cp Vagrantfile.tpl Vagrantfile` et modifier le fichier Vagrantfile en ajoutant la ligne `config.vm.box = "<Nom_de_la_box>.box"`, juste avant la ligne `config.vm.provider "virtualbox" do |vb|`.
+Pour des raisons de bug lié aux script bash pour l'installation des outils la méthode vagrant pour l'import dans votre hyperviseur car celui-ci au lancement supprime des fichiers pour utilisé les fichiers de votre PC.
 
-Et maintenant vous pouvez lancer la commande:
+Voici la nouvelle méthode d'application:
 
-```
-vagrant up
-```
+Veuillez extraire le contenu du fichier box.
+
+Ouvrez votre hyperviseur, et importez le contenu extrait dans celui-ci.
+
+Une fois la VM importé, dans l'hyperviseur configurez la carte réseaux que vous désirez utilisé ainsi que la mémoire graphique afin de fluidifié son utilisation.
 
 Identifiant: vagrant
-
 Password: vagrant
-
-**Note**: Quand on exécute un `vagrant up`, Vagrant va copier la box dans un cache et elle ne sera pas détruite automatiquement.
-Pour pallier à ce problème vous pourrez supprimer le dossier `output-<hypeviseur>-iso` et taper la commande `vagrant box remove <nom_de_la_box>`.
-Il se peut que vous rencontriez le même problème avec VirtualBox si une VM porte le même nom, pour régler cela taper la commande `VBoxManage unregistervm <nom_de_la_vm> --delete`.
