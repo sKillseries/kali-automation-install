@@ -2,6 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
+  config.vm.box = "nom_de_la_box"
   config.vm.provider :virtualbox do |vb, override|
     vb.gui = true
     vb.customize ["modifyvm", :id, "--vram", "128"]

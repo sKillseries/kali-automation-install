@@ -48,8 +48,8 @@
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S bash -euxo pipefail '{{.Path}}'",
       "scripts": [
         "scripts/vagrant.sh",
-        "scripts/minimize.sh",
-        "scripts/pentest-tools-install.sh"
+        "scripts/pentest-tools-install.sh",
+        "scripts/minimize.sh"
       ]
     }
   ],
