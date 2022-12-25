@@ -51,17 +51,9 @@
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S bash -euxo pipefail '{{.Path}}'",
       "scripts": [
         "scripts/vagrant.sh",
-        "scripts/pentest-tools-install.sh",
-        "scripts/minimize.sh"
+        "scripts/minimize.sh",
+        "scripts/pentest-tools-install.sh"
       ]
     }
-  ],
-  "post-processors": [
-    [
-      {
-        "type": "vagrant",
-        "vagrantfile_template": "Vagrantfile.tpl"
-      }
-    ]
   ]
 }

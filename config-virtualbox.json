@@ -52,13 +52,5 @@
         "scripts/pentest-tools-install.sh"
       ]
     }
-  ],
-  "post-processors": [
-    [
-      {
-        "type": "vagrant",
-        "vagrantfile_template": "Vagrantfile.tpl"
-      }
-    ]
   ]
 }

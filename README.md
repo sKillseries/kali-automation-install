@@ -61,15 +61,10 @@ Ce script est en cours de dev et viendra dans la prochaine release.
 
 ## Lancer la VM
 
-Pour des raisons de bug lié aux script bash pour l'installation des outils la méthode vagrant pour l'import dans votre hyperviseur car celui-ci au lancement supprime des fichiers pour utilisé les fichiers de votre PC.
-
-Voici la nouvelle méthode d'application:
-
-Veuillez extraire le contenu du fichier box.
-
-Ouvrez votre hyperviseur, et importez le contenu extrait dans celui-ci.
+Ouvrez votre hyperviseur, et importez le contenu du dossier `output-<hyperviseur>-iso`.
 
 Une fois la VM importé, dans l'hyperviseur configurez la carte réseaux que vous désirez utilisé ainsi que la mémoire graphique afin de fluidifié son utilisation.
 
 Identifiant: vagrant
+
 Password: vagrant
