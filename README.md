@@ -13,7 +13,7 @@ Pour que le script soit utilisable, il faut au préalable installer [packer](htt
 
 Sur Linux, il suffit de taper la commande suivante
 ```
-apt install packer vagrant virtualbox virtuabox-ext-pack
+apt install packer virtualbox virtuabox-ext-pack
 ```
 Cependant, si vous souhaiter utilisé VMware, il faudra l'installer manuellement.
 Exemple d'installation de VMware Player: https://lecrabeinfo.net/installer-vmware-workstation-player-sur-ubuntu-linux.html
