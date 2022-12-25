@@ -9,16 +9,21 @@ Cette outil permet de configurer Kali en Français et d'instancier le lancement 
 Cet idée de projet m'est venu à l'esprit lors de ma formation ESD (Mastère Spécialisé Expert en Sécurité Digitale Bac+5) après le module Lead Pentester.
 
 ## Prérequis
-Pour que le script soit utilisable, il faut au préalable installer [packer](https://www.packer.io/) ainsi que [VMware](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html) ou [VirtualBox](https://www.virtualbox.org/) en fonction de votre hyperviseur cible.
+Pour que le script soit utilisable, il faut au préalable installer [packer](https://www.packer.io/) ainsi que [VMware](https://www.vmware.com/fr/products/workstation-pro/workstation-pro-evaluation.html) ou [VirtualBox](https://www.virtualbox.org/) en fonction de votre hyperviseur cible.
 
 Sur Linux, il suffit de taper la commande suivante
 ```
 apt install packer virtualbox virtuabox-ext-pack
 ```
 Cependant, si vous souhaiter utilisé VMware, il faudra l'installer manuellement.
-Exemple d'installation de VMware Player: https://lecrabeinfo.net/installer-vmware-workstation-player-sur-ubuntu-linux.html
+```
+chmod +x VMware-Workstation-xxxx.bundle
+sudo ./VMware-Workstation-xxxx.bundle
+```
+Dans le cas de l'utilisation de VMware il faudra aller dans "Edit" puis "Virtual Network Editor..." en mode root (Linux ou utilisé la commande `sudo vmware-netcfg`), en mode administrateur (Windows), pour initialiser la configuration des cartes réseaux.
+Sans cela packer sera en erreur et ne pourra lancer la création de VM.
 
-**NOTE**: Concernant VMware, Packer fonctionne avec VMware Fusion (Mac OS), VMware Workstation (Linux et Windows), et VMware Player (uniquement Linux).
+**NOTE**: Concernant VMware, Packer fonctionne avec VMware Fusion (Mac OS)(Non testé), VMware Workstation (Linux et Windows)(testé).
 
 ## Configuration
 
