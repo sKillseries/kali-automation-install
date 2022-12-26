@@ -20,10 +20,10 @@ Cependant, si vous souhaiter utilisé VMware, il faudra l'installer manuellement
 chmod +x VMware-Workstation-xxxx.bundle
 sudo ./VMware-Workstation-xxxx.bundle
 ```
-Dans le cas de l'utilisation de VMware il faudra aller dans "Edit" puis "Virtual Network Editor..." en mode root (Linux ou utilisé la commande `sudo vmware-netcfg`), en mode administrateur (Windows), pour initialiser la configuration des cartes réseaux.
+Dans le cas de l'utilisation de VMware il faudra aller dans "Edit" puis "Virtual Network Editor..." en mode root (Linux ou utilisé la commande `sudo vmware-netcfg`), en mode administrateur (Windows), pour initialiser la configuration des cartes réseaux (si vous êtes sous Mac OS avec Fusion vous n'aurez pas besoin de faire cette manip).
 Sans cela packer sera en erreur et ne pourra lancer la création de VM.
 
-**NOTE**: Concernant VMware, Packer fonctionne avec VMware Fusion (Mac OS)(Non testé), VMware Workstation (Linux et Windows)(testé).
+**NOTE**: Concernant VMware, Packer fonctionne avec VMware Fusion (Mac OS)(testé), VMware Workstation (Linux et Windows)(testé). Malgré le dit fonctionnement de packer avec VMware Player dans la documentation officielle ce n'est pas le cas (test effectué sur tous les systèmes d'exploitation et avec les deux hyperviseurs VMware et VirtualBox).
 
 ## Configuration
 
@@ -68,8 +68,12 @@ Ce script est en cours de dev et viendra dans la prochaine release.
 
 Ouvrez votre hyperviseur, et importez le contenu du dossier `output-<hyperviseur>-iso`.
 
-Une fois la VM importé, dans l'hyperviseur configurez la carte réseaux que vous désirez utilisé ainsi que la mémoire graphique afin de fluidifié son utilisation.
+Dans le cas de l'utilisation de VMware l'étape ci-dessus est inutile, il suffit d'ouvrir l'hyperviseur et de lancer la VM créer.
+
+Une fois la VM importé, dans l'hyperviseur configurez la carte réseaux que vous désirez utilisé.
 
 Identifiant: vagrant
 
 Password: vagrant
+
+N'hésitez pas à me faire une retour sur cet outil via twitter @sKillseries ou via LinkedIn (voir Lien sur ma page d'accueil GitHub).
