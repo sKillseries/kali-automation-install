@@ -1,0 +1,4 @@
+https://github.com/Mebus/cupp.git
+https://github.com/maurosoria/dirsearch.git
+https://github.com/rbsec/dnscan.git
+https://github.com/rebootuser/LinEnum.git
