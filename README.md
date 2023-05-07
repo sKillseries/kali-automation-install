@@ -13,7 +13,7 @@ Pour que le script soit utilisable, il faut au préalable installer [packer](htt
 
 Sur Linux, il suffit de taper la commande suivante
 ```
-apt install packer virtualbox virtuabox-ext-pack
+apt install packer virtualbox virtualbox-ext-pack
 ```
 Cependant, si vous souhaiter utilisé VMware, il faudra l'installer manuellement.
 ```
