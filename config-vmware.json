@@ -52,7 +52,8 @@
       "scripts": [
         "scripts/vagrant.sh",
         "scripts/minimize.sh",
-        "scripts/pentest-tools-install.sh"
+        "scripts/pentest-tools-install.sh",
+        "scripts/docker-install.sh"
       ]
     }
   ]
